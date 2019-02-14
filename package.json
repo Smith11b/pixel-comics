@@ -1,0 +1,31 @@
+{
+  "name": "pixel-comics",
+  "version": "1.0.0",
+  "description": "Pixel Comics is a application that lets a user upload a photo, and turn it into retro looking 1990's pixel art (think GameBoy Color);",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smith11b/pixel-comics.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Smith11b/pixel-comics/issues"
+  },
+  "homepage": "https://github.com/Smith11b/pixel-comics#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.12",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10"
+  }
+}
