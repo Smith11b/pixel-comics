@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
-function Image() {
-    return (
-        <div>
-            
-        </div>
-    )
+function Image(props) {
+  return (
+    <div>
+      {props.isLoaded ? (
+        <img src="" alt="uploaded user" className = "main-img" />
+      ) : (
+        <img src="./img/placeholder.jpg" alt="placeholder"  className = "main-img"/>
+      )}
+    </div>
+  );
 }
 
-export default Image
+export default Image;
