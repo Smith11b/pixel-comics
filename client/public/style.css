@@ -1,0 +1,16 @@
+#root {
+  width: 500px;
+  margin: auto;
+}
+
+.main-img {
+  width: 500px;
+}
+
+.upload-field {
+    display: inline-block;
+}
+
+.upload-btn {
+    display: inline-block;
+}
