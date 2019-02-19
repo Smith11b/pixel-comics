@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Nav from './components/Nav';
 import Routes from './Routes';
 
-
-
 class App extends Component {
   constructor(){
     super();
@@ -17,8 +15,6 @@ class App extends Component {
       <div className="App">
         <Nav />
         <Routes />
-
-
       </div>
     );
   }
