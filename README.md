@@ -12,10 +12,8 @@ Pixel Comics is a application that lets a user upload a photo, and turn it into 
 6. The user account section will display the users stored pixel art.
 
 ## WireFrame
-
 <img src ="/pixel-comics/client/public/img/Pixel-comic.png">
 
 
 ## Structure (Mind Map)
-
 <img src = "/pixel-comics/client/public/img/mindmappixelart.png" >
