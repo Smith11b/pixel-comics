@@ -4,7 +4,7 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const User = require("../models/userSchema");
 
-authRouter("/signup", (res, req, next) => {
+authRouter.post("/signup", (req, res, next) => {
   // try to find a user with the provided username. (If it already exists, we want to tell them
   // that the username is already taken.)
 
@@ -33,7 +33,7 @@ authRouter("/signup", (res, req, next) => {
   });
 });
 
-authRouter("/login", (res, req, next) => {
+authRouter.post("/login", (req, res, next) => {
   // Try to find the user with the submitted username (lowercased)
   User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
     if (err) {
