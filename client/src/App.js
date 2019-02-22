@@ -23,7 +23,8 @@ class App extends Component {
         username: this.username,
         password: this.password
       })
-      .then(res => this.setState({ token: res.data[0].token }));
+      .then(res => this.setState({ token: res.data[0].token }))
+      .catch(err => console.log(err.message));
   };
   render() {
     return (
