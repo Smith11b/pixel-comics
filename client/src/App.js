@@ -8,6 +8,7 @@ class App extends Component {
     this.state = {
       fileInput: null,
       images:  null,
+      token: null
     }
   }
   render() {
