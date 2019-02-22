@@ -4,7 +4,7 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const User = require("../models/userSchema");
 
-authRouter("/signup", (res, req, next) => {
+authRouter.post("/signup", (req, res, next) => {
   // try to find a user with the provided username. (If it already exists, we want to tell them
   // that the username is already taken.)
 
@@ -33,28 +33,40 @@ authRouter("/signup", (res, req, next) => {
   });
 });
 
-authRouter("/login", (res, req, next) => {
+authRouter.post("/login", (req, res, next) => {
   // Try to find the user with the submitted username (lowercased)
   User.findOne({ username: req.body.username.toLowerCase() }, (err, user) => {
     if (err) {
       return next(err);
     }
-    // If that user isn't in the database OR the password is wrong:
-    if (!user || user.password !== req.body.password) {
-      res.status(403);
-      return next(new Error("Email or password are incorrect"));
-    }
+    user.checkPassword(req.body.password, (err, match) => {
+      if (err) return res.status(500).send(err);
+      if (!match)
+        res.status(401).send({
+          success: false,
+          message: "Username or password are incorrect"
+        });
 
-    // If username and password both match an entry in the database,
-    // create a JWT! Add the user object as the payload and pass in the secret.
-    // This secret is like a "password" for your JWT, so when you decode it
-    // you'll pass the same secret used to create the JWT so that it knows
-    // you're allowed to decode it.
-    const token = jwt.sign(user.toObject(), process.env.SECRET);
+      // If that user isn't in the database OR the password is wrong:
+      if (!user) {
+        res.status(403);
+        return next(new Error("Username password are incorrect"));
+      }
 
-    // Send the token back to the client app.
-    return res.send({ token: token, user: user.toObject(), success: true });
+      const token = jwt.sign(user.withoutPassword(), process.env.SECRET);
+      return res.send({
+        token: token,
+        user: user.withoutPassword(),
+        success: true
+      });
+    });
   });
+
+  // If username and password both match an entry in the database,
+  // create a JWT! Add the user object as the payload and pass in the secret.
+  // This secret is like a "password" for your JWT, so when you decode it
+  // you'll pass the same secret used to create the JWT so that it knows
+  // you're allowed to decode it.
 });
 
 module.exports = authRouter;
