@@ -1,6 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 #root {
   width: 500px;
+  height: 100vh;
   margin: auto;
+  background-color: whitesmoke;
+}
+
+.auth-form{
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.auth-header{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(47, 3, 88);
+}
+
+.auth-button {
+  font-size: 30px;
+  margin: 8px;
+  padding: 16px;
+  color: rgb(47, 3, 88);
+  background-color: rgb(209, 208, 208);
+  box-shadow: 1px 1px 1px black;
+  border-radius: 4px;
+}
+
+.auth-button:active {
+  box-shadow: none;
 }
 
 .main-img {
@@ -14,23 +46,6 @@
     border-radius: 3px;
 }
 
-.login {
-  font-size: 30px;
-  padding: 16px;
-  border-radius: 6px;
-}
-
-.signup {
-  font-size: 30px;
-  padding: 16px;
-  border-radius: 6px;
-}
-
-.auth-form{
-  width: 500px;
-  margin: auto;
-  text-align: center;
-}
 
 
 .upload-btn {

@@ -17,8 +17,8 @@ export default class Auth extends Component {
     this.setState({ password: e.target.value });
   };
 
-  handleLogin = (e) => {
-      e.preventDefault();
+  handleLogin = e => {
+    e.preventDefault();
     axios
       .post("/auth/login", {
         username: this.state.username,
@@ -31,7 +31,7 @@ export default class Auth extends Component {
     const props = this.props;
     return (
       <div className="auth-form">
-        <h1>Pixel Comics</h1>
+        <h1 className="auth-header">Pixel Comics</h1>
         <div>
           {props.showLogin ? (
             <Login
@@ -39,7 +39,7 @@ export default class Auth extends Component {
               username={this.username}
               usernameOnChange={this.handleUsernameChange}
               passwordOnChange={this.handlePasswordOnChange}
-              handleSubmit = {this.handleLogin}
+              handleSubmit={this.handleLogin}
             />
           ) : props.showSignup ? (
             <Signup
@@ -52,10 +52,10 @@ export default class Auth extends Component {
         </div>
         {props.showLogin === false && props.showSignup === false ? (
           <div>
-            <button onClick={props.toggleShowLogin} className="login">
+            <button onClick={props.toggleShowLogin} className="auth-button">
               Login
             </button>
-            <button onClick={props.toggleShowSignup} className="signup">
+            <button onClick={props.toggleShowSignup} className="auth-button">
               Signup
             </button>
           </div>
