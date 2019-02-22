@@ -10,15 +10,22 @@
   background-color: whitesmoke;
 }
 
-.auth-form{
+.auth-form {
   width: 500px;
+  height: 100vh;
   margin: auto;
+  background-image: url("../../img/color-pixels.jpg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
-.auth-header{
+.auth-header {
+  font-size: 45px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(47, 3, 88);
+  text-shadow: 0px 0px 6px whitesmoke;
 }
 
 .auth-button {
@@ -26,13 +33,20 @@
   margin: 8px;
   padding: 16px;
   color: rgb(47, 3, 88);
-  background-color: rgb(209, 208, 208);
+  text-shadow: 0px 0px 3px whitesmoke;
+  background: inherit;
+  background-position-y: -3px;
   box-shadow: 1px 1px 1px black;
+  cursor: pointer;
   border-radius: 4px;
 }
 
+.auth-button:hover {
+  box-shadow: inset 0px 0px 50px rgba(245, 245, 245, 0.281);
+}
+
 .auth-button:active {
-  box-shadow: none;
+  box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.397);
 }
 
 .main-img {
@@ -40,16 +54,14 @@
 }
 
 .upload-field {
-    display: inline-block;
-    width: 400px;
-    border: 1px solid rgb(212, 212, 212);
-    border-radius: 3px;
+  display: inline-block;
+  width: 400px;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 3px;
 }
 
-
-
 .upload-btn {
-    display: inline-block;
-    height: 21px;
-    background-color: aquamarine;
+  display: inline-block;
+  height: 21px;
+  background-color: aquamarine;
 }

@@ -6,7 +6,7 @@ function Auth(props) {
       <h1 className="auth-header">Pixel Comics</h1>
       <button className="auth-button">Login</button>
       <button className="auth-button">Signup</button>
-
+      
     </div>
   )
 }
