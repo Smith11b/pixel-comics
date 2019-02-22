@@ -1,12 +1,20 @@
 import React from "react";
 
 function Image(props) {
+  const canvas = <canvas className="main-img" ref={props.setCanvasRef} />;
   return (
     <div>
-      {props.isLoaded ? (
-        <img src="" alt="uploaded user" className = "main-img" />
+      {props.src ? (
+        <>
+          {canvas}
+          <img src={props.src} alt="placeholder" className="main-img" />
+        </>
       ) : (
-        <img src="./img/placeholder.jpg" alt="placeholder"  className = "main-img"/>
+        <img
+          src="./img/placeholder.jpg"
+          alt="placeholder"
+          className="main-img"
+        />
       )}
     </div>
   );

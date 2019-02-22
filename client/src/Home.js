@@ -1,15 +1,13 @@
-import React from 'react'
-import Image from "./components/Image"
-import FileInput from './components/FileInput';
+import React from "react";
+import Image from "./components/Image";
+import FileInput from "./components/FileInput";
 
 function Home(props) {
-    return (
-        <div>
-            <Image />
-            <FileInput />
-           
-        </div>
-    )
+  return (
+    <div>
+      <FileInput />
+    </div>
+  );
 }
 
-export default Home
+export default Home;

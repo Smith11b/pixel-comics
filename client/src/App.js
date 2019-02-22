@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Nav from "./components/Nav";
 import Routes from "./Routes";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 
 class App extends Component {
@@ -51,22 +52,27 @@ class App extends Component {
     });
   };
 
+  logout = () => {
+    localStorage.removeItem("token");
+    this.props.history.push("/");
+  };
+
   render() {
     return (
       <div className="App">
-        <Nav />
+        <Nav logout={this.logout} />
         <Routes
           {...this.state}
           handleLogin={this.handleLogin}
           handleSignup={this.handleSignup}
           handleUsernameChange={this.handleUsernameChange}
           handlePasswordOnChange={this.handlePasswordOnChange}
-          toggleShowLogin = {this.toggleShowLogin}
-          toggleShowSignup = {this.toggleShowSignup}
+          toggleShowLogin={this.toggleShowLogin}
+          toggleShowSignup={this.toggleShowSignup}
         />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

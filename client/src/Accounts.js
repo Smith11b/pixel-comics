@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Accounts(props) {
-    return (
-        <div>
-            
-        </div>
-    )
+export default class Accounts extends Component {
+    render() {
+        return (
+            <div>
+                
+            </div>
+        )
+    }
 }
 
-export default Accounts
