@@ -9,8 +9,32 @@
 
 .upload-field {
     display: inline-block;
+    width: 400px;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 3px;
 }
+
+.login {
+  font-size: 30px;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.signup {
+  font-size: 30px;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.auth-form{
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
 
 .upload-btn {
     display: inline-block;
+    height: 21px;
+    background-color: aquamarine;
 }
