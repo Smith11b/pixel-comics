@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Nav() {
+function Nav({logout}) {
     return (
         <div>
-            
+            {localStorage.token ? <button onClick = {logout}>logout</button> : <div> </div>}
         </div>
     )
 }

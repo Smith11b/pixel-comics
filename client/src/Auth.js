@@ -24,7 +24,10 @@ export default class Auth extends Component {
         username: this.state.username,
         password: this.state.password
       })
-      .then(res => console.log(res.data))
+      .then(res => {
+        localStorage.setItem("token", res.data.token);
+        this.props.history.push("/home");
+      })
       .catch(err => console.log(err.message));
   };
 
@@ -35,7 +38,7 @@ export default class Auth extends Component {
         username: this.state.username,
         password: this.state.password
       })
-      .then(res => console.log(res.data))
+      .then(res => localStorage.setItem("token", res.data.token))
       .catch(err => console.log(err.message));
   };
 
@@ -47,6 +50,7 @@ export default class Auth extends Component {
         <div>
           {props.showLogin ? (
             <Login
+              shouldRedirect={this.shouldRedirect}
               password={this.password}
               username={this.username}
               usernameOnChange={this.handleUsernameChange}
@@ -62,7 +66,7 @@ export default class Auth extends Component {
               handleSubmit={this.handleSignup}
             />
           ) : (
-            <div> </div>
+            <div />
           )}
         </div>
         {props.showLogin === false && props.showSignup === false ? (
