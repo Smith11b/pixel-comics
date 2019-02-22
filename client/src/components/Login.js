@@ -3,8 +3,9 @@ import React from 'react'
 function Login(props) {
   return (
     <div>
-      <input onChange = {props.usernameOnChange} placeholder = "username"/>
-      <input onChange = {props.passwordOnChange} placeholder = "password"/>
+      <input value = {props.username} onChange = {props.usernameOnChange} placeholder = "username"/>
+      <input value = {props.password} onChange = {props.passwordOnChange} placeholder = "password"/>
+      <button onClick = {props.handleSubmit}>Login</button>
       
     </div>
   )

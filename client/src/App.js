@@ -7,8 +7,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      username: null,
-      password: null,
       fileInput: null,
       images: null,
       token: null,

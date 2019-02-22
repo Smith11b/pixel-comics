@@ -3,20 +3,34 @@ import { Route } from "react-router-dom";
 import Home from "./Home";
 import Auth from "./Auth";
 
-function Routes(props) {
+function Routes({
+  handleLogin,
+  handleSignup,
+  handleUsernameChange,
+  handlePasswordOnChange,
+  toggleShowLogin,
+  toggleShowSignup,
+  showLogin,
+  showSignup,
+  username,
+  password
+}) {
   return (
     <div>
       <Route
         path="/"
-        render={props => (
+        component={props => (
           <Auth
-            {...props}
-            handleLogin={props.handleLogin}
-            handleSignup={props.handleSignup}
-            handleUsernameChange = {props.handleUsernameChange}
-            handlePasswordOnChange = {props.handlePasswordOnChange}
-            toggleShowSignup = {props.toggleShowSignup}
-            toggleShowLogin = {props.toggleShowSignup}
+            username={username}
+            password={password}
+            showLogin={showLogin}
+            showSignup={showSignup}
+            handleLogin={handleLogin}
+            handleSignup={handleSignup}
+            handleUsernameChange={handleUsernameChange}
+            handlePasswordOnChange={handlePasswordOnChange}
+            toggleShowSignup={toggleShowSignup}
+            toggleShowLogin={toggleShowLogin}
           />
         )}
       />

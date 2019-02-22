@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Signup() {
+function Signup(props) {
   return (
     <div>
+    <input onChange = {props.usernameOnChange} placeholder = "username"/>
+      <input onChange = {props.passwordOnChange} placeholder = "password"/>
       
     </div>
   )
