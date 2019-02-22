@@ -27,6 +27,18 @@ export default class Auth extends Component {
       .then(res => console.log(res.data))
       .catch(err => console.log(err.message));
   };
+
+  handleSignup = e => {
+    e.preventDefault();
+    axios
+      .post("/auth/signup", {
+        username: this.state.username,
+        password: this.state.password
+      })
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err.message));
+  };
+
   render() {
     const props = this.props;
     return (
@@ -43,8 +55,11 @@ export default class Auth extends Component {
             />
           ) : props.showSignup ? (
             <Signup
-              usernameOnChange={props.handleUsernameChange}
-              passwordOnChange={props.handlePasswordOnChange}
+              password={this.password}
+              username={this.username}
+              usernameOnChange={this.handleUsernameChange}
+              passwordOnChange={this.handlePasswordOnChange}
+              handleSubmit={this.handleSignup}
             />
           ) : (
             <div> </div>
